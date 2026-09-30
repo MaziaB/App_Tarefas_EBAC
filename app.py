@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from typing import Optional
 import secrets
 import os
+import subprocess
 
 from sqlalchemy import create_engine, Column, Integer, String, Boolean
 from sqlalchemy.ext.declarative import declarative_base
