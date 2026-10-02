@@ -9,11 +9,13 @@ Aplicação que tem como base um CRUD, para manipulação das informações e co
 Como clonar o repositório:
 -No terminal: git clone https://github.com/MaziaB/App_Tarefas_EBAC.git
 -Entre na pasta cd App_Tarefas_EBAC
--Confira se existe um Dockerfile: dir. Você vai encontrar algo como: 
+-Confira se existe um Dockerfile: dir. 
+Você vai encontrar algo como: 
 Dockerfile
-requirements.txt
 app.py
 
-Para construir a imagem:
--Comando no terminal: 'podman build -t app.py .'.
--Comando para rodar a imagem: 'podman run --env-file .env -d -p 8000:8000 app.py'
+Comandos no terminal para construir e executar a imagem:
+-'podman machine init'
+-'podman machine start'
+-'podman-compose build'
+-'podman-compose up -d'
