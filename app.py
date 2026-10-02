@@ -88,7 +88,7 @@ def get_tarefas(page: int = 1, limit: int = 10, db: Session = Depends(sessao_db)
         }
 
 
-@app.put("/status-da-tarefa/{nome_tarefa}")
+@app.put("/status-da-tarefa")
 def put_tarefas(tarefa: Tarefa, db: Session = Depends(sessao_db), credentials: HTTPBasicCredentials = Depends(autenticar_usuario)):
     db_tarefa = db.query(TarefaDB).filter(TarefaDB.nome_tarefa == tarefa.nome_tarefa).first()
     if not db_tarefa:
@@ -103,7 +103,7 @@ def put_tarefas(tarefa: Tarefa, db: Session = Depends(sessao_db), credentials: H
     return {"Message": "Status da tarefa atualizado com sucesso!"}
 
 
-@app.delete("/excluir-tarefa/{nome_tarefa}")
+@app.delete("/excluir-tarefa")
 def delete_tarefa(tarefa: Tarefa, db: Session = Depends(sessao_db), credentials: HTTPBasicCredentials = Depends(autenticar_usuario)):
     db_tarefa = db.query(TarefaDB).filter(TarefaDB.nome_tarefa == tarefa.nome_tarefa).first()
     if not db_tarefa:

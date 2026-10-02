@@ -19,3 +19,4 @@ Comandos no terminal para construir e executar a imagem:
 -'podman machine start'
 -'podman-compose build'
 -'podman-compose up -d'
+-'podman-compose down' - para derrubar o container.
